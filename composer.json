@@ -1,0 +1,29 @@
+{
+    "name": "agenticmorf/fluxui-loki",
+    "description": "FluX UI for Grafana Loki log viewer - Livewire dashboard",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0|^12.0",
+        "livewire/flux": "^2.0",
+        "livewire/livewire": "^3.0|^4.0"
+    },
+    "suggest": {
+        "livewire/flux-pro": "Required for date picker and time picker. Run: php artisan flux:activate"
+    },
+    "autoload": {
+        "psr-4": {
+            "AgenticMorf\\FluxUILoki\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AgenticMorf\\FluxUILoki\\FluxUILokiServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
