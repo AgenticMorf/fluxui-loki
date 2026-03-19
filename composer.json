@@ -1,5 +1,9 @@
 {
     "name": "agenticmorf/fluxui-loki",
+    "homepage": "https://github.com/AgenticMorf/fluxui-loki",
+    "support": {
+        "source": "https://github.com/AgenticMorf/fluxui-loki"
+    },
     "description": "FluX UI for Grafana Loki log viewer - Livewire dashboard",
     "type": "library",
     "version": "1.0.0",
@@ -10,12 +14,21 @@
         "livewire/flux": "^2.0",
         "livewire/livewire": "^3.0|^4.0"
     },
+    "require-dev": {
+        "christhompsontldr/laravel-docit": "^1.0",
+        "orchestra/pest-plugin-testbench": "^4.0",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "phpunit/phpunit": "^12.0"
+    },
     "suggest": {
         "livewire/flux-pro": "Required for date picker and time picker. Run: php artisan flux:activate"
     },
     "autoload": {
         "psr-4": {
-            "AgenticMorf\\FluxUILoki\\": "src/"
+            "AgenticMorf\\FluxUILoki\\": "src/",
+            "AgenticMorf\\FluxUILoki\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -23,6 +36,18 @@
             "providers": [
                 "AgenticMorf\\FluxUILoki\\FluxUILokiServiceProvider"
             ]
+        }
+    },
+    "scripts": {
+        "docit": "php vendor/bin/build-docs",
+        "test": "bash -c 'cd ../.. && vendor/bin/pest plugins/fluxui-loki/tests --configuration=plugins/fluxui-loki/phpunit.xml'",
+        "test:coverage": "bash -c 'cd ../.. && XDEBUG_MODE=coverage vendor/bin/pest plugins/fluxui-loki/tests --configuration=plugins/fluxui-loki/phpunit.xml --coverage'",
+        "test:type-coverage": "bash -c 'cd ../.. && vendor/bin/pest plugins/fluxui-loki/tests --configuration=plugins/fluxui-loki/phpunit.xml --type-coverage'",
+        "test:mutation": "bash -c 'cd ../.. && XDEBUG_MODE=coverage vendor/bin/pest plugins/fluxui-loki/tests --configuration=plugins/fluxui-loki/phpunit.xml --mutate --everything --covered-only --class=AgenticMorf\\\\FluxUILoki'"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     },
     "minimum-stability": "stable"

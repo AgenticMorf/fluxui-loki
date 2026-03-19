@@ -1,4 +1,6 @@
-# christhompsontldr/fluxui-loki
+# agenticmorf/fluxui-loki
+
+Documentation is available on [GitHub Pages](https://agenticmorf.github.io/fluxui-loki/).
 
 FluX UI for [Grafana Loki](https://grafana.com/oss/loki/) — Livewire dashboard to query Loki logs from Sail/Docker services.
 
